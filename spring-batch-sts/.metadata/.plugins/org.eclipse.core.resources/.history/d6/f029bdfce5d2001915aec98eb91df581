@@ -1,0 +1,5 @@
+package com.batch.reader;
+
+public class ProductReader {
+
+}

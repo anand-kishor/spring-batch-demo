@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="App-4-SpringBatchCsvFileExample"/>
+<aop-project name="remote-chunking"/>
+<aop-project name="App-6-ActimqReader"/>
+<aop-project name="single-jvm-demos"/>
+<aop-project name="App-7-batch-partitioning"/>
+<aop-project name="App-1-csvToDatabase"/>
+<aop-project name="App-5-SpringBatchPartitioning"/>
+<aop-project name="App-3-springbatchXMLConfiguration"/>
+<aop-project name="partitioned-demo"/>
+<aop-project name="App-2-RestartableFunction"/>
+</aop-reference-model>

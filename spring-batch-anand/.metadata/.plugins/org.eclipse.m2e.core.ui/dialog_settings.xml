@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\Anand-PC\Downloads\SpringBatchExample3"/>
+			<item value="F:\spring-boot-by-kishor\MultileResourceFileInSpringBatch"/>
+			<item value="F:\spring-boot-by-kishor\MySchedularInSpringBatch"/>
+			<item value="F:\spring-boot-by-kishor\ScheluderSpringBatchProject"/>
+			<item value="F:\spring-boot-by-kishor\SpringBatchCsvFileExample"/>
+			<item value="F:\spring-boot-by-kishor\SpringBatchXmlToDatabase"/>
+			<item value="F:\spring-boot-by-kishor\XmlToDatabaseInSpringBoot"/>
+			<item value="F:\spring-boot-by-kishor\CsvToMySqlDataTransfer"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

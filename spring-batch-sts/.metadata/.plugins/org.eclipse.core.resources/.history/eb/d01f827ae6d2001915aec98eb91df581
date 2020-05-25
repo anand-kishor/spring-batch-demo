@@ -1,0 +1,5 @@
+package com.batch.writer;
+
+public class ProductWriter {
+
+}

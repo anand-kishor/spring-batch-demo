@@ -1,0 +1,8 @@
+drop table if exists product;
+
+create table product(
+id BIGINT  NOT NULL,
+name VARCHAR(40),
+email VARCHAR(50),
+salary int
+);

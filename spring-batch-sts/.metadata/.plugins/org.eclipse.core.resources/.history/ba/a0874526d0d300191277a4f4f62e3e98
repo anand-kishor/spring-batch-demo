@@ -1,0 +1,125 @@
+package com.batch.config;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobExecutionListener;
+import org.springframework.batch.core.Step;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
+import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
+import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
+import org.springframework.batch.item.file.FlatFileItemWriter;
+import org.springframework.batch.item.jms.JmsItemReader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.jms.annotation.EnableJms;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
+import org.springframework.jms.support.converter.MessageConverter;
+import org.springframework.jms.support.converter.MessageType;
+
+import com.batch.model.Person;
+
+@EnableJms
+@EnableBatchProcessing
+@Configuration
+public class SpringActiveMQConfig {
+	private static final Logger logger=LoggerFactory.getLogger(SpringActiveMQConfig.class.getName());
+	@Autowired
+	private JmsTemplate jmsTemplate;
+	
+	@Autowired
+	private JobBuilderFactory jobBuilderFactory;
+	@Autowired
+	private StepBuilderFactory stepBuilderFactory;
+	
+	@Bean
+	public JmsListenerContainerFactory<?> queueListenerFactory()
+	{
+		DefaultJmsListenerContainerFactory factory=new DefaultJmsListenerContainerFactory();
+		factory.setMessageConverter(messageConverter());
+		return factory;
+	}
+
+	@Bean
+	private MessageConverter messageConverter() {
+		// TODO Auto-generated method stub
+		MappingJackson2MessageConverter converter=new MappingJackson2MessageConverter();
+		converter.setTargetType(MessageType.TEXT);
+		converter.setTypeIdPropertyName("_type");
+		
+		return converter;
+	}
+	@Bean
+	public JmsItemReader personJmsItemReader(MessageConverter messageConverter)
+	{
+		JmsItemReader personJmsItemReader=new JmsItemReader();
+		personJmsItemReader.setJmsTemplate(jmsTemplate);
+		personJmsItemReader.setItemType(Person.class);
+		return personJmsItemReader;
+	}
+
+
+	@Bean
+	public FlatFileItemWriter personFlatFileItemWriter()
+	{
+		FlatFileItemWriter personFlatFileItemWriter=new FlatFileItemWriter<>();
+		personFlatFileItemWriter.setLineAggregator(person ->person.toString());
+		personFlatFileItemWriter.setLineSeparator(System.lineSeparator());
+		personFlatFileItemWriter.setResource(new FileSystemResource("person.txt"));
+		return personFlatFileItemWriter;
+	}
+	@Bean
+	public Job importJob()
+	{
+		return jobBuilderFactory.get("importJob")
+				.incrementer(new RunIdIncrementer())
+				.listener(jobExecutionListener())
+				.flow(step1())
+				.end()
+				.build();
+	}
+
+	private JobExecutionListener jobExecutionListener() {
+		// TODO Auto-generated method stub
+		
+		return new JobExecutionListener() {
+
+			@Override
+			public void beforeJob(JobExecution jobExecution) {
+				// TODO Auto-generated method stub
+				Person[] people= {new Person("anand","saurav"),new Person("jack","son"),new Person("apple","mango")
+						
+				,new Person("pen","rotomac"),new Person("patan","bihar")};
+				for(Person person:people)
+				{
+					logger.info(person.toString());jmsTemplate.convertAndSend(person);
+					
+				}
+				
+			}
+
+			@Override
+			public void afterJob(JobExecution jobExecution) {
+				// TODO Auto-generated method stub
+				
+			}};
+	}
+
+	private Step step1() {
+		// TODO Auto-generated method stub
+		return stepBuilderFactory.get("step1")
+				.<Person,Person>chunk(10)
+				.reader(personJmsItemReader(messageConverter()))
+				.writer(personFlatFileItemWriter())
+				.build();
+	}
+	
+	
+}

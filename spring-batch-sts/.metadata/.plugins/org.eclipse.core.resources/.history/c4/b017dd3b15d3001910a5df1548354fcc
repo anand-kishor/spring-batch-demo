@@ -1,0 +1,12 @@
+spring.datasource.url=jdbc:mysql://localhost:3307/stsbatch
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+spring.datasource.username=root
+spring.datasource.password=root
+spring.batch.job.enabled=true
+spring.batch.initialize-schema=ALWAYS
+//spring.datasource.schema=classpath:schema.sql
+
+limitstart=2
+sleeptime=10000
+filepath=f:\\readfile\\1.txt
+folderpath=f:\\readfile

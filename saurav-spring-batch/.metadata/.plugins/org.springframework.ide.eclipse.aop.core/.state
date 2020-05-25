@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="featurerequestmapping"/>
+<aop-project name="SpringXDJob"/>
+<aop-project name="SpringBatchCsvToXml"/>
+<aop-project name="SpringBatchParallelStep"/>
+<aop-project name="resttemplatesecurity"/>
+<aop-project name="scaling-parallel-steps"/>
+<aop-project name="springjpa-mysql"/>
+<aop-project name="SpringCloudConfigServer"/>
+<aop-project name="scaling-parallel-partitioning"/>
+<aop-project name="SpringJPAOneToManyRelationship"/>
+<aop-project name="spring-restful-service"/>
+<aop-project name="SpringBatchPartitioning"/>
+<aop-project name="spring-resttemplate-client"/>
+<aop-project name="SpringJPAOneToOne"/>
+<aop-project name="springjpa-many2many"/>
+<aop-project name="securityrestfulservice"/>
+</aop-reference-model>

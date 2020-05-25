@@ -1,0 +1,5 @@
+package com.anand.quartz;
+
+public class QuartzJob {
+
+}

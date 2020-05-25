@@ -1,0 +1,26 @@
+<beans:beans xmlns="http://www.springframework.org/schema/batch"
+    xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/batch
+           http://www.springframework.org/schema/batch/spring-batch-3.0.xsd">
+           
+            <job id="job" restartable="true">
+        <step id="step1" next="step2">
+        <tasklet ref="taskletStep1"/>
+    </step>
+    <step id="step2" next="step3">
+        <tasklet allow-start-if-complete="true" ref="taskletStep2"/>
+    </step>
+    <step id="step3">
+        <tasklet start-limit="${limitstart}" ref="taskletStep3"/>
+    </step>
+    </job>
+     
+     
+     <beans:bean id="taskletStep1" class="com.batch.tasklet.TaskletStep1"/>
+    <beans:bean id="taskletStep2" class="com.batch.tasklet.TaskletStep2"/>
+    <beans:bean id="taskletStep3" class="com.batch.tasklet.TaskletStep3"/>
+ 
+ </beans:beans>

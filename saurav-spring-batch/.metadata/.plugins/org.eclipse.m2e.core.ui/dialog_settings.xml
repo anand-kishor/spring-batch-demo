@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="F:\sample approach\SpringBootSecurityRestfulService\SpringBootSecurityRestfulService"/>
+			<item value="F:\sample approach\SpringBootRestTemplateSecurity\SpringBootRestTemplateSecurity"/>
+			<item value="F:\sample approach\springboot-resttemplate\springboot-resttemplate"/>
+			<item value="F:\sample approach\springboot-restful-service\springboot-restful-service"/>
+			<item value="F:\sample approach\SpringMVCNewFeatureRequestMapping-1\SpringMVCNewFeatureRequestMapping"/>
+			<item value="F:\sample approach\SpringJPA-MySQL\SpringJPA-MySQL"/>
+			<item value="F:\sample approach\SpringJpaMany2Many\SpringJpaMany2Many"/>
+			<item value="F:\sample approach\SpringJpaOneToManyRelationship-2\SpringJpaOneToManyRelationship"/>
+			<item value="F:\sample approach\SpringJPAOneToOne-sp1.5.6\SpringJPAOneToOne-sp1.5.6"/>
+			<item value="F:\SpringBatchCsvToXml"/>
+			<item value="C:\Users\Anand-PC\Downloads\SpringCloudConfigClient"/>
+			<item value="F:\SpringCloudConfigClient"/>
+			<item value="F:\SpringCloudConfigServer"/>
+			<item value="F:\SpringXDJob"/>
+			<item value="F:\SpringBatchParallelStep-1\SpringBatchParallelStep"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

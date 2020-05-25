@@ -1,0 +1,8 @@
+drop table if exists product;
+create database stsbatch;
+create table product(
+id BIGINT  NOT NULL primary key AUTO_INCREMENT,
+name VARCHAR(40),
+email VARCHAR(50),
+salary int
+);

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBatchParallelStep
+Implementation-Version: 0.0.1
+Built-By: Anand-PC
+Implementation-Vendor-Id: com.javasampleapproach
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/SpringBatchP
+ arallelStep/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

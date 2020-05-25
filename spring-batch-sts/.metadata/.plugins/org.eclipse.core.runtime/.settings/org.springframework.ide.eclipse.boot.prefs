@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.batch=3
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jdbc=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=3
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=2
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=App-7-batch-partitioning
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.1.8.RELEASE
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Demo project for Spring Boot restartable function
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.batch
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=1.8
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=App-7-batch-partitioning
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.batch.partion
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

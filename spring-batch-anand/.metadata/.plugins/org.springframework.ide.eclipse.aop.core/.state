@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="App-1-csvFtoDatabase"/>
+<aop-project name="SpringBatchExample"/>
+<aop-project name="Example-1-SpringBatchScheduler"/>
+<aop-project name="CsvToMySqlDataTransfer"/>
+</aop-reference-model>
